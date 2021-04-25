@@ -11,7 +11,7 @@
 		$categorieG->deleteCategorie($_GET['idC']);
 		header('Location:listeC.php');
 	}
-//
+////
 ?>
 <!DOCTYPE html>
 <html>

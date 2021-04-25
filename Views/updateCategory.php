@@ -10,7 +10,7 @@
         
         $categorieG->updateCategorie($categorie,$_GET['idC']);
     }
-    //
+    ////
 ?>
 
 <!DOCTYPE html>

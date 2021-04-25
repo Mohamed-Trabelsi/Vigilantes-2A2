@@ -2,7 +2,7 @@
 	require_once("../config.php");
 	class gererCategorie
 	{
-        //
+        ////
 			
           public function ajouterCategorie($categorie) {
             try {

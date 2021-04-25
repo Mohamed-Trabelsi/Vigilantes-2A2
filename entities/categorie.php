@@ -1,5 +1,5 @@
 <?php
-//
+////
 class categorie
 {
 	private $idCategory;
