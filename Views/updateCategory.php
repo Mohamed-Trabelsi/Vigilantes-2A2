@@ -1,5 +1,5 @@
 <?php
-    require_once '../core/categorie.php';
+    require_once '../Controller/categorie.php';
     require_once '../entities/categorie.php';
 
     $categorieG =  new gererCategorie();
@@ -10,6 +10,7 @@
         
         $categorieG->updateCategorie($categorie,$_GET['idC']);
     }
+    //
 ?>
 
 <!DOCTYPE html>

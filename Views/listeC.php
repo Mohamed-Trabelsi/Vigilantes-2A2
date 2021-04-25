@@ -1,5 +1,5 @@
 <?php
-    require_once '../core/categorie.php';
+    require_once '../Controller/categorie.php';
 
     $categorieG =  new gererCategorie();
 
@@ -11,7 +11,7 @@
 		$categorieG->deleteCategorie($_GET['idC']);
 		header('Location:listeC.php');
 	}
-
+//
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,6 +42,7 @@
 		<section class="container">
 			<h2>Animaux</h2>
 			<a href = "shop.php" class="btn btn-primary shop-item-button" href = "#">Ajouter</a>
+			<br><br>
 			<div class="shop-items">
 				<?php
 					foreach ($categories as $categorie) {
@@ -54,6 +55,7 @@
 						<a type="button" class="btn btn-primary shop-item-button" href = "listeC.php?idC=<?= $categorie['idC'] ?>">Supprimer</a>
 					</div>
 				</div>
+				<br><br>
 				<?php 
 					}
 				?>

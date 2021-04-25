@@ -1,11 +1,11 @@
 <?php
-
-    require_once '../core/categorie.php';
+//
+    require_once '../Controller/categorie.php';
     require_once '../entities/categorie.php';
 
     $gererCategorie =  new gererCategorie();
 
-    if (isset($_POST['nomc']) && isset($_POST['date'])) {
+    if (isset($_POST['nomc'])&&($_POST['nomc']!="") && isset($_POST['date'])) {
         $categorie = new categorie($_POST['nomc'], $_POST['date']);
         $gererCategorie->ajouterCategorie($categorie);
         echo('record added');

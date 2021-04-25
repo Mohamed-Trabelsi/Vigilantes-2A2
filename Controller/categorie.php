@@ -2,6 +2,7 @@
 	require_once("../config.php");
 	class gererCategorie
 	{
+        //
 			
           public function ajouterCategorie($categorie) {
             try {
@@ -24,7 +25,9 @@
                 $pdo = getConnexion();
                 $query = $pdo->prepare(
                     'SELECT * FROM categorie'
+
                 );
+                
                 $query->execute();
                 return $query->fetchAll();
             } catch (PDOException $e) {
