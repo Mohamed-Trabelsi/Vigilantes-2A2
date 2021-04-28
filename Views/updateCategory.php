@@ -24,7 +24,7 @@
 
 <body>
 
-    <!--<a href = "searchAlbum.php" class="btn btn-primary shop-item-button">Search</a>-->
+    <a href = "searchCategory.php" class="btn btn-primary shop-item-button">Search</a>
     <?php
         if (isset($_GET['idC'])) {
             $result = $categorieG->getCategorieById($_GET['idC']);

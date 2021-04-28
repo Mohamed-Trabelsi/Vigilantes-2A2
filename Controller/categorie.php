@@ -68,26 +68,14 @@
                 $e->getMessage();
             }
         }
-        public function getCategorieById($id) {
-            try {
-                $pdo = getConnexion();
-                $query = $pdo->prepare(
-                    'SELECT * FROM categorie WHERE idC = :id'
-                );
-                $query->execute([
-                    'id' => $id
-                ]);
-                return $query->fetch();
-            } catch (PDOException $e) {
-                $e->getMessage();
-            }
-        }
 
-       /* public function getAnimalByNom($nom) {
+    
+
+        public function getCategorieByNom($nom) {
             try {
                 $pdo = getConnexion();
                 $query = $pdo->prepare(
-                    'SELECT * FROM animal WHERE nom = :nom'
+                    'SELECT * FROM categorie WHERE nomC = :nom'
                 );
                 $query->execute([
                     'nom' => $nom
@@ -96,6 +84,25 @@
             } catch (PDOException $e) {
                 $e->getMessage();
             }
-        }*/
+        }
+        public function afficherProduit($idCategory)
+        {
+             try 
+               {
+                 $pdo = getConnexion();
+                 $query = $pdo->prepare(
+                    'SELECT * FROM produit where categorie = :id'
+                 );
+                 $query->execute([
+                    'id' => $idCategory
+                 ]);
+                 return $query->fetch();
+                }
+                catch (PDOException $e)
+                {
+                  $e->getMessage();
+                }
+
+        }
 }
 ?>

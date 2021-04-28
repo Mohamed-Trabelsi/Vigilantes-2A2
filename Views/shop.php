@@ -2,9 +2,11 @@
 //
     require_once '../Controller/categorie.php';
     require_once '../entities/categorie.php';
-
+    require_once '../Controller/produit.php';
+    require_once '../entities/produit.php';
     $gererCategorie =  new gererCategorie();
-
+    $categories = $gererCategorie -> afficherCategorie();
+    $gererProduit = new gererProduit();
     if (isset($_POST['nomc'])&&($_POST['nomc']!="") && isset($_POST['date'])) {
         $categorie = new categorie($_POST['nomc'], $_POST['date']);
         $gererCategorie->ajouterCategorie($categorie);
@@ -12,6 +14,13 @@
         header('Location:listeC.php');
     }
   
+  if (isset($_POST['nomp'])&&($_POST['nomp']!="") && isset($_POST['prixp']) && isset($_POST['descriptionp']) && isset($_POST['imagep'])  && isset($_POST['dateAp']) ) {
+        $produit = new produit($_POST['nomp'], $_POST['prixp'], $_POST['descriptionp'], $_POST['imagep'], $_POST['dateAp']);
+        $gererProduit->ajouterProduit($produit);
+        echo('record added');
+        header('Location:shop.php');
+    }
+
     ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +28,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include_once 'header.php'; ?>
     <title>Gestion de la boutique</title>
   </head>
   <body>
@@ -67,9 +77,23 @@
     </label>
 </td>
 <td>
-<select name="id">
-<option>choix</option>
-</select>
+<select name="idcategorie" id="idcategorie">
+          <?php
+                      foreach ($categories as $categorie) {
+          ?>
+          <option value="<? $categorie['idC'] ?>"
+                         <?php
+                              if (isset ($_POST['submitP']) && $categorie['idC']===$_POST['categorie']) {
+                         ?>
+selected
+<?php } ?>
+            >
+            <?= $categorie['nomC'] ?>
+            
+          </option>
+          <?php } ?>
+          
+        </select>
 </td>
 </tr>
 <tr>
@@ -85,7 +109,7 @@
 <td>
   <label for="prixp">Prix:
     </label>
-    <td><input type="text" name="prixp" id="prixp" ></td>
+    <td><input type="number" name="prixp" id="prixp" ></td>
 </td>
 </tr>
 <tr>
@@ -105,9 +129,10 @@
 </tr>
 </tr>
 </table>
-</form>
 <br><br>
 <input type="submit" name="submitP" value="Ajouter">
+</form>
+
 <br><br>
 <hr>
 <br><br>
@@ -171,5 +196,6 @@
       <br><br>
       <input type="submit" name="submitPC" value="Ajouter">
     </div>
+
 </body>
 </html>

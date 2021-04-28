@@ -38,6 +38,7 @@
 </table>
 </div>
 </body>-->
+
 <body>
 		<section class="container">
 			<h2>Animaux</h2>
