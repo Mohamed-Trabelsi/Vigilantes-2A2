@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Collapsed Sidebar</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+
+</head>
+
+<body class="hold-transition sidebar-mini sidebar-collapse">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand custom-nav">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="../client/accueil.php" class="nav-link">Accueil</a>
+      </li>
+    
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+   
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar custom-nav">
+    
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+      <img src="../logo.jpg"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+         >
+      <span class="brand-text font-weight-light">Utique Fruit - Admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+    
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview menu-close custom-nav-item">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-bookmark custom-icon"></i>
+              <p>
+               Gestion des categories
+               </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="ajoutCategorie.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Ajouter une categorie</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="afficherCategorie.php" class="nav-link">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Afficher les categories</p>
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-tags custom-icon"></i>
+              <p>
+                Gestion des produits
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="ajoutProduit.php" class="nav-link">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Ajouter un produit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="afficherProduit.php" class="nav-link">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Afficher les produits</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="chart.php" class="nav-link">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Stock</p>
+                </a>
+              </li>
+             </ul>
+            </li>
+
+<li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-file-signature custom-icon"></i>
+              <p>
+                Gestion des reclamation
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="afficherreclamation.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Consuler les reclamations</p>
+                </a>
+              </li>
+            </ul>
+             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="crud type/ajoutertypee.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Ajouter un type de 
+                  reclamation</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="crud type/affichertype.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Afficher les types de 
+                  reclamation</p>
+                </a>
+              </li>
+            </ul>
+</li>
+
+ <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-truck custom-icon"></i>
+              <p>
+                Gestion des livraisons
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="afficherlivraison.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Afficher les livraisons</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+         <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-people-carry custom-icon"></i>
+              <p>
+                Gestion des livreurs
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="ajoutlivreur.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Ajouter un livreurs</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="afficherlivreur.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Afficher les livreurs</p>
+                </a>
+              </li>
+              </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="chartlivreur.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Statistique des secteurs</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+       
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-hand-holding-usd custom-icon"></i>
+              <p>
+                Gestion de Commande
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="AfficherCommande.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Afficher les commandes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-star-half-alt custom-icon"></i>
+              <p>
+                Gestion des avis-client
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="afficheravisclient.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Consulter les avis-client</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="chartavis.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Statistique</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link custom-link ">
+              <i class="nav-icon fas fa-comment custom-icon"></i>
+              <p>
+                Gestion de forum
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="Modifiersujet.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon custom-icon"></i>
+                  <p>Modifer les sujets</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <form id="formulaire_prod_ajouter">
+<table id="tab_prod_ajouter">
+  <tr> <td colspan="2" id="titre">Ajouter un produit
+  </td></tr>
+  <tr>
+    <td><p id="text">Id produit : </p>
+      <input type="text" name="id"></td>
+    <td><p id="text">Nom produit : </p>
+      <input type="text" name="nom"></td> 
+    </tr>
+  <tr>
+    <td><p id="text">Description : </p>
+<textarea name="description">
+
+</textarea>
+     </td>
+
+    <td><p id="text">Prix / kg :</p>
+    <input type="number" name="prix">
+     </td>
+  </tr>
+  <tr>
+        <td><p id="text">Quantité : </p>
+    <input type="number" name="quantite">
+     </td>
+
+    <td> <p id="text">Image: </p>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+  
+</form> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p id="text">Catégorie </p>
+    <SELECT name="nom" size="1">
+<OPTION>fruits exotiques
+<OPTION>-
+<OPTION>-
+<OPTION>-
+<OPTION>-
+</SELECT>
+   </td>
+  </tr>
+
+  <tr>
+        <td colspan="2"><input type="submit" name="s_inscrire" value="S'inscrire"></td>
+  </tr>
+</table>
+</form>
+
+  </div>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+</body>
+</html>

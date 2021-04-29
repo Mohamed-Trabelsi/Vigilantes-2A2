@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="inscription.css">
+	<title>Inscription</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<meta name="google-signin-client_id" content="59749501512-0gtq3ogkp86qt3980vivb2qefus87nef.apps.googleusercontent.com">
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  function onSignIn(googleUser) {
+    var profile=googleUser.getBasicProfile();
+    document.myform.id.value=profile.getId();
+ document.myform.adresse_email.value=profile.getEmail();
+       
+}
+</script>
+</head>
+<body>
+<div class="topnav">
+	<table>
+  <colgroup>
+<col style="width: 5%">
+<col style="width: 76%">
+<col style="width: 19%">
+</colgroup>
+<tr>
+	<td>
+<img src="../logo.jpg" id="logo">
+	</td>
+	
+	<td class="title">
+  Utique fruit
+	</td>
+	<td>
+<a href="../Mode_invite/accueil.php">Mode invit&eacute;
+</a>
+  		
+	</td>
+</tr>
+ </table>
+ </div> 
+<div class="left">
+<form method="POST" action="inscription.php" name="myform">
+<table>
+  <tr> <td colspan="2" id="titre">Cr&eacute;er un Compte
+  </td></tr>
+  <tr>
+    <td><p id="text">Identifiant : </p>
+      <input type="text" name="id"></td>
+    <td><p id="text">Adresse E-mail : </p>
+      <input type="text" name="adresse_email"></td> 
+    </tr>
+  <tr>
+    <td><p id="text">Mot de passe : </p>
+    <input type="password" name="motdepasse">
+     </td>
+
+    <td><p id="text">Confirmer votre mot de passe :</p>
+    <input type="password" name="confirmation">
+     </td>
+  </tr>
+  <tr>
+        <td><p id="text">Pays : </p>
+    <input type="text" name="pays">
+     </td>
+
+    <td> <p id="text">Ville: </p>
+    <input type="text" name="ville">
+     </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p id="text">Code Postal: </p>
+    <input type="text" name="code_postal">
+    </td>
+  </tr>
+
+  <tr>
+  	    <td colspan="2"><input type="submit" name="s_inscrire" value="S'inscrire"></td></tr>
+        <tr>            <td colspan="2"><div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+  </tr>
+  <tr>
+  	  	<td colspan="2" id="se_connecter">Vous avez un compte? <a href="login.html">Se connecter</a></td>  </tr>
+</table>
+</form>
+</div>
+
+<div class="right">
+</div>
+<div class="footer">
+  <p> Digital Natives 2020 &copy; Tous droits r&eacute;serv&eacute;s</p>
+</div>
+
+</body>
+</html>
