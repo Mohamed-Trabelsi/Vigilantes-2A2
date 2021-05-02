@@ -1,13 +1,13 @@
 <?php
-    require_once '../controller/albumC.php';
+    require_once '../controller/hotelC.php';
     require_once '../entities/hotel.php';
 
-    $albumC =  new albumC();
+    $hotelC =  new hotelC();
 
     if (isset($_POST['name']) && isset($_POST['prix']) && isset($_POST['image'])  && isset($_POST['adresse'])  && isset($_POST['caracteristiques'])  && isset($_POST['chambre'])) {
         $hotel = new hotel($_POST['name'], (float)$_POST['prix'], $_POST['image'], $_POST['adresse'],$_POST['caracteristiques'], $_POST['chambre']);
         
-        $albumC->updateHotel($hotel,$_GET['id']);
+        $hotelC->updateHotel($hotel,$_GET['id']);
     }
    
 ?>
@@ -26,7 +26,7 @@
     <a href = "searchAlbum.php" class="btn btn-primary shop-item-button">Search</a>
     <?php
         if (isset($_GET['id'])) {
-            $result = $albumC->getAlbumById($_GET['id']);
+            $result = $hotelC->getAlbumById($_GET['id']);
 			if ($result !== false) {
     ?>
 	<section class="container">

@@ -1,13 +1,13 @@
 <?php
-    require_once '../controller/albumC.php';
+    require_once '../controller/hotelC.php';
     require_once '../entities/hotel.php';
 
-    $albumC =  new albumC();
+    $hotelC =  new hotelC();
 
     if (isset($_POST['name']) && isset($_POST['prix']) && isset($_POST['image'])  && isset($_POST['adresse'])  && isset($_POST['caracteristiques'])  && isset($_POST['chambre'])) {
         $hotel = new hotel($_POST['name'], (float)$_POST['prix'], $_POST['image'], $_POST['adresse'],$_POST['caracteristiques'], $_POST['chambre']);
         
-        $albumC->addHotel($hotel);
+        $hotelC->addHotel($hotel);
 
         header('Location:showAlbums.php');
     }

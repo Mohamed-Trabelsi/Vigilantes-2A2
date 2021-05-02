@@ -1,12 +1,12 @@
 <?php
-    require_once '../controller/albumC.php';
+    require_once '../controller/hotelC.php';
 
-    $albumC =  new albumC();
+    $hotelC =  new hotelC();
 
-	$albums = $albumC->afficherHotel();
+	$albums = $hotelC->afficherHotel();
 
 	if (isset($_GET['id'])) {
-		$albumC->deleteHotel($_GET['id']);
+		$hotelC->deleteHotel($_GET['id']);
 		header('Location:showAlbums.php');
 	}
 
@@ -24,7 +24,7 @@
 <body>
 	
 	<a href = "searchAlbum.php" class="btn btn-primary shop-item-button">Search</a>
-	
+	<section class="container">
 			<h2>HOTEL</h2>
 			  
 
@@ -33,24 +33,6 @@
 
 						<b><td><a href = "addAlbum.php" class="btn btn-primary shop-item-button" href = "#">Ajouter</a></td>
 						   <td></td></tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
-		
-			
 				<?php
 					foreach ($albums as $hotel) {
 				?>
@@ -67,17 +49,6 @@
 						<a type="button" class="btn btn-primary shop-item-button" href = "updateAlbum.php?id=<?= $hotel['id'] ?>">Modifier</a></td>
 	<td><a type="button" class="btn btn-primary shop-item-button" href = "showAlbums.php?id=<?= $hotel['id'] ?>">Supprimer</a></td>
 </tr>
-					
-					
-					
-				
-					
-					
-					
-						
-						
-					
-				
 				<?php 
 					}
 				?>
@@ -86,6 +57,7 @@
 
 	
 
+</section>
 
 </body>
 

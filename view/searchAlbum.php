@@ -1,7 +1,7 @@
 <?php
-    require_once '../controller/albumC.php';
+    require_once '../controller/hotelC.php';
 
-    $albumC =  new albumC();
+    $hotelC =  new hotelC();
 
 ?>
 
@@ -39,7 +39,7 @@
 
 	<?php
 		if (isset($_POST['name']) && isset($_POST['search'])){
-			$result = $albumC->getHotelByName($_POST['name']);
+			$result = $hotelC->getHotelByName($_POST['name']);
 			if ($result !== false) {
 	?>
 		<section class="container">
