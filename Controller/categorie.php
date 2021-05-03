@@ -1,9 +1,7 @@
 <?php 
 	require_once("../config.php");
 	class gererCategorie
-	{
-        ////
-			
+	{		
           public function ajouterCategorie($categorie) {
             try {
                 $pdo = getConnexion();
@@ -69,7 +67,20 @@
             }
         }
 
-    
+     public function getCategorieById($id) {
+            try {
+                $pdo = getConnexion();
+                $query = $pdo->prepare(
+                    'SELECT * FROM categorie WHERE idC = :id'
+                );
+                $query->execute([
+                    'id' => $id
+                ]);
+                return $query->fetch();
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+        }
 
         public function getCategorieByNom($nom) {
             try {
@@ -103,6 +114,37 @@
                   $e->getMessage();
                 }
 
+        }
+
+        function afficher()
+    {
+        $db=getConnexion();
+        $sql="select * from categorie";
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e)
+        {
+            die ('erreur : '.$e->getMessage());
+
+        }
+
+}
+public function afficherNom($id) {
+            try {
+                $pdo = getConnexion();
+                $query = $pdo->prepare(
+                    'SELECT nomC FROM categorie WHERE idC = id'
+
+                );
+                
+                $query->execute();
+                return $query->fetchAll();
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
         }
 }
 ?>

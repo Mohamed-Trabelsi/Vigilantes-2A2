@@ -17,51 +17,39 @@
 <html>
 <head>
 	<title>Liste des catégories</title>
-	 <!-- to make it looking good im using bootstrap -->
-	 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	 <?php include_once 'header.php'; ?>
 </head>
-<!--<body>
-	<div class="container">
-
-		<br><br>
-		<h2>Les categories</h2>
-		<br><br>
-<table class="table">
+<body>
+	 <?php include_once 'nav-bar.php'; ?>
+		<div id="right-panel" class="right-panel">
+      <div class="content">
+			<h2>Liste des catégorie</h2>
+			<br><br>
+			<table class="table">
 	<thead>
-		<tr>
+	<tr>
 		<th>ID</th>
 		<th>Nom</th>
 		<th>Date d'ajout</th>
 	</tr>
 	</thead>
-</table>
-</div>
-</body>-->
-
-<body>
-		<section class="container">
-			<h2>Animaux</h2>
-			<a href = "shop.php" class="btn btn-primary shop-item-button" href = "#">Ajouter</a>
-			<br><br>
-			<div class="shop-items">
-				<?php
+	<?php
 					foreach ($categories as $categorie) {
 				?>
-				<div class="shop-item">
-					<strong class="shop-item-title"> <?= $categorie['nomC'] ?> </strong>
-					<div class="shop-item-details">
-						<span class="shop-item-price"><?= $categorie['dateC'] ?>  </span>
-						<a type="button" class="btn btn-primary shop-item-button" href = "updateCategory.php?idC=<?= $categorie['idC'] ?>">Modifier</a>
-						<a type="button" class="btn btn-primary shop-item-button" href = "listeC.php?idC=<?= $categorie['idC'] ?>">Supprimer</a>
-					</div>
-				</div>
-				<br><br>
+				<tr>
+<td><?= $categorie['idC'] ?></td>					
+<td><?= $categorie['nomC'] ?></td>
+<td><?= $categorie['dateC'] ?></td>
+<td><a type="button" class="btn btn-info" href = "updateCategory.php?idC=<?= $categorie['idC'] ?>">Modifier</a>
+						<a type="button" class="btn btn-danger" href = "listeC.php?idC=<?= $categorie['idC'] ?>">Supprimer</a>
+</td>
+				</tr>
 				<?php 
 					}
-				?>
-			</div>
-		</section>
+				?>	
+</table>
 
+</div>
+</div>
 </body>
 </html>

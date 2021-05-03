@@ -4,37 +4,48 @@ class produit
 {
 	private $idProduit;
 	private $nomProduit;
-	private $prixProduit;
+	private $categ;
 	private $descrProduit;
-	private $noteProduit;
+	private $prixProduit;
 	private $imgProduit;
 	private $dateAProduit;
-	public function __construct($nomProduit,$prixProduit,$descrProduit,$imgProduit,$dateAProduit)
+	private $qte;
+	//private $noteProduit;
+	public function __construct($nomProduit,$categ,$descrProduit,$prixProduit,$imgProduit,$dateAProduit,$qte)
 	
 	{
 		$this->nomProduit=$nomProduit;
-		$this->prixProduit=$prixProduit;
+		$this->categ=$categ;
 		$this->descrProduit=$descrProduit;
-		
-		//$this->noteProduit=$noteProduit;
+		$this->prixProduit=$prixProduit;
 		$this->imgProduit=$imgProduit;
 		$this->dateAProduit=$dateAProduit;
+		$this->qte=$qte;
+		//$this->noteProduit=$noteProduit;
+		
+		
 		
 	}
 	        
 	public function getidProduit(){return $this->idProduit;}
 	public function getnomProduit(){return $this->nomProduit;}
-	public function getprixProduit(){return $this->prixProduit;}
+	public function getCateg(){return $this->categ;}
 	public function getdescrProduit(){return $this->descrProduit;}
-	//public function getnoteProduit(){return $this->noteProduit;}
+	public function getprixProduit(){return $this->prixProduit;}
 	public function getimgProduit(){return $this->imgProduit;}
 	public function getdateAProduit(){return $this->dateAProduit;}
+	public function getQte(){return $this->qte;}
+	//public function getnoteProduit(){return $this->noteProduit;}
+
 	public function setnomProduit($nomProduit){$this->nomProduit=$nomProduit;}
-	public function setprixProduit($prixProduit){$this->prixProduit=$prixProduit;}	
+	public function setCateg($categ){$this->categ=$categ;}
 	public function setdescrProduit($descrProduit){$this->descrProduit=$descrProduit;}
-	//public function setnoteProduit($noteProduit){$this->noteProduit=$noteProduit;}
+	public function setprixProduit($prixProduit){$this->prixProduit=$prixProduit;}	
 	public function setimgProduit($imgProduit){$this->imgProduit=$imgProduit;}
 	public function setdateAProduit($dateAProduit){$this->dateAProduit=$dateAProduit;}
+	public function setQte($qte){$this->qte=$qte;}
+	//public function setnoteProduit($noteProduit){$this->noteProduit=$noteProduit;}
+	
 }
 
 ?>

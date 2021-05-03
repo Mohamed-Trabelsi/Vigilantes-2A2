@@ -1,46 +1,52 @@
 <?php
-//
+
     require_once '../Controller/categorie.php';
     require_once '../entities/categorie.php';
     require_once '../Controller/produit.php';
     require_once '../entities/produit.php';
     $gererCategorie =  new gererCategorie();
     $categories = $gererCategorie -> afficherCategorie();
-    $gererProduit = new gererProduit();
+    
     if (isset($_POST['nomc'])&&($_POST['nomc']!="") && isset($_POST['date'])) {
         $categorie = new categorie($_POST['nomc'], $_POST['date']);
         $gererCategorie->ajouterCategorie($categorie);
         echo('record added');
         header('Location:listeC.php');
     }
-  
-  if (isset($_POST['nomp'])&&($_POST['nomp']!="") && isset($_POST['prixp']) && isset($_POST['descriptionp']) && isset($_POST['imagep'])  && isset($_POST['dateAp']) ) {
-        $produit = new produit($_POST['nomp'], $_POST['prixp'], $_POST['descriptionp'], $_POST['imagep'], $_POST['dateAp']);
+
+   $gererProduit = new gererProduit();
+  if ((isset($_POST['nomp'])&&($_POST['nomp']!="")) && isset($_POST['categorie']) && isset($_POST['descriptionp']) && isset($_POST['prixp']) && isset($_POST['imagep']) && isset($_POST['dateAp']) && isset($_POST['qte'])) {
+        $produit = new produit($_POST['nomp'], $_POST['categorie'], $_POST['descriptionp'], $_POST['prixp'], $_POST['imagep'], $_POST['dateAp'],$_POST['qte']);
         $gererProduit->ajouterProduit($produit);
         echo('record added');
         header('Location:shop.php');
     }
-
+    
     ?>
  <!DOCTYPE html>
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include_once 'header.php'; ?>
-    <title>Gestion de la boutique</title>
   </head>
   <body>
+ <?php include_once 'nav-bar.php'; ?>
+    <div id="right-panel" class="right-panel">
+      <div class="content">
     <h2>Gestion de la boutique</h2>
-      <hr>
-      <div>
-        <br><br>
-<form action="" method="POST">
-        <table border="1" width="40%">
+    <hr>
+     <br><br>
+       <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="box-title">Ajout des catégories </h4>
+                            </div>
+                            <div class="row">
+<form action="" method="post">
+                                <table border="1" width="40%">
 
           <tr>
-            <td rowspan='2' colspan='1'>Catégories</td>
             <td>
               <label for="nomc">Nom:
               </label>
@@ -58,14 +64,23 @@
       <br><br>
       <input type="submit" name="submitC" value="Ajouter">
       </form>
-        <br><br>
-        <hr>
-        <br><br>
-      <form action="" method="post">
-
-        <table border="1" width="40%">
+                            </div> <!-- /.row -->
+                            <div class="card-body"></div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+  
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="box-title">Ajout des produits </h4>
+                            </div>
+                            <div class="row">
+        
+      <form id="" action="" method="POST" >
+<table border="1" width="40%">
          <tr>
-<td rowspan="6">Produits</td>
 <td>
   <label for="nomp">Nom:
     </label>
@@ -73,26 +88,20 @@
 <td><input type="text" name="nomp" id="nomp" ></td>
 <tr>
 <td>
-<label for="id">ID de la catégorie:
+<label for="categorie">ID de la catégorie:
     </label>
 </td>
 <td>
-<select name="idcategorie" id="idcategorie">
+<!--<input type="text" name="categorie" id="categorie" >  -->
+       <select name="categorie" id="categorie">
           <?php
                       foreach ($categories as $categorie) {
           ?>
-          <option value="<? $categorie['idC'] ?>"
-                         <?php
-                              if (isset ($_POST['submitP']) && $categorie['idC']===$_POST['categorie']) {
-                         ?>
-selected
-<?php } ?>
-            >
+          <option value="<?= $categorie['idC'] ?>">
             <?= $categorie['nomC'] ?>
-            
-          </option>
+         </option>
           <?php } ?>
-          
+
         </select>
 </td>
 </tr>
@@ -127,75 +136,28 @@ selected
     <td><input type="date" name="dateAp" id="dateAp" ></td>
 </td>
 </tr>
+<tr>
+<td>
+  <label for="qte">Quantité:
+    </label>
+    <td><input type="number" name="qte" id="qte" ></td>
+</td>
 </tr>
 </table>
 <br><br>
 <input type="submit" name="submitP" value="Ajouter">
 </form>
+</div> <!-- /.row -->
+                            <div class="card-body"></div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
 
-<br><br>
-<hr>
-<br><br>
- <form action="" method="post">
-        <table border="1" width="40%">
-         <tr>
-
-<td rowspan="7">Packs</td>
-<td>
-  <label for="nompc">Nom:
-    </label>
-</td>
-<td><input type="text" name="nompc" id="nompc" ></td>
-<tr>
-<td>
-<label for="idpc">ID des produits:
-    </label>
-</td>
-<td>
-<select name="idpc">
-<option>choix</option>
-</select>
-</td>
-</tr>
-<tr>
-  <tr>
-<td>
-  <label for="descriptionpc">Description:
-    </label>
-    </td>
-    <td>
-    <textarea name="descriptionpc" id="descriptionpc" clos="30" rows="5"></textarea>
-</td>
-</tr>
-<tr>
-<td>
-  <label for="prixpc">Prix:
-    </label>
-    <td><input type="text" name="prixpc" id="prixpc" ></td>
-</td>
-</tr>
-<tr>
-<td>
-  <label for="dateD">Date début:
-    </label>
-  </td>
-    <td><input type="date" name="dateD" id="dateD" ></td>
-</tr>
-<tr>
-<td>
-  <label for="dateF">Date fin:
-    </label>
-  </td>
-    <td><input type="date" name="dateF" id="dateF" ></td>
-</tr>
-
-
-
-        </table>
-      </form>
-      <br><br>
-      <input type="submit" name="submitPC" value="Ajouter">
-    </div>
+      
+    
 
 </body>
+<?php include_once 'footer.php'; ?>
+</div>
+</div>
 </html>
