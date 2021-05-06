@@ -3,11 +3,11 @@
 
     $hotelC =  new hotelC();
 
-	$albums = $hotelC->afficherHotel();
+	$hotels = $hotelC->afficherHotel();
 
 	if (isset($_GET['id'])) {
 		$hotelC->deleteHotel($_GET['id']);
-		header('Location:showAlbums.php');
+		header('Location:showhotel.php');
 	}
 
 ?>
@@ -23,7 +23,7 @@
 
 <body>
 	
-	<a href = "searchAlbum.php" class="btn btn-primary shop-item-button">Search</a>
+	<a href = "searchhotel.php" class="btn btn-primary shop-item-button">Search</a>
 	<section class="container">
 			<h2>HOTEL</h2>
 			  
@@ -31,10 +31,10 @@
 			  <div class="panel"><div class="table-responsive"><table class="table table-striped title1">
 						<tr><td><b>S.N.</b></td><td><b>nom</b></td><td><b>Adresse</b></td><td><b>chambres disponibles</b></td><td><b>prix</b></td><td><b>By</b></td>
 
-						<b><td><a href = "addAlbum.php" class="btn btn-primary shop-item-button" href = "#">Ajouter</a></td>
+						<b><td><a href = "addhotel.php" class="btn btn-primary shop-item-button" href = "#">Ajouter</a></td>
 						   <td></td></tr>
 				<?php
-					foreach ($albums as $hotel) {
+					foreach ($hotels as $hotel) {
 				?>
 				
 <tr>
@@ -46,8 +46,9 @@
 	<td><img src="../images/<?= $hotel['image'] ?>" width = "200" height = "200" class="shop-item-image">
 </td>
 	<td>
-						<a type="button" class="btn btn-primary shop-item-button" href = "updateAlbum.php?id=<?= $hotel['id'] ?>">Modifier</a></td>
-	<td><a type="button" class="btn btn-primary shop-item-button" href = "showAlbums.php?id=<?= $hotel['id'] ?>">Supprimer</a></td>
+						<a type="button" class="btn btn-primary shop-item-button" href = "updatehotel.php?id=<?= $hotel['id'] ?>">Modifier</a></td>
+	<td><a type="button" class="btn btn-primary shop-item-button" href = "showhotel.php?id=<?= $hotel['id'] ?>">Supprimer</a></td>
+	<td><a type="button" class="btn btn-primary shop-item-button" href = "addreservation.php?id=<?= $hotel['id'] ?>">reserver</a></td>
 </tr>
 				<?php 
 					}

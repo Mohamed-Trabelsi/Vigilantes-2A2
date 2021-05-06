@@ -1,6 +1,6 @@
 <?php
     require_once '../controller/hotelC.php';
-    require_once '../entities/hotel.php';
+    require_once '../assets/hotel.php';
 
     $hotelC =  new hotelC();
 
@@ -23,7 +23,7 @@
 
 <body>
 
-    <a href = "searchAlbum.php" class="btn btn-primary shop-item-button">Search</a>
+    <a href = "searchhotel.php" class="btn btn-primary shop-item-button">Search</a>
     <?php
         if (isset($_GET['id'])) {
             $result = $hotelC->getAlbumById($_GET['id']);
@@ -31,7 +31,7 @@
     ?>
 	<section class="container">
 		<h2>Update hotel</h2>
-        <a href = "showAlbums.php" class="btn btn-primary shop-item-button">All albums</a>
+        <a href = "showhotel.php" class="btn btn-primary shop-item-button">All hotel</a>
 		<div class="form-container">
             <form action="" method = "POST">
                 <div class="row">
@@ -91,7 +91,7 @@
         }
     }
         else {
-            header('Location:showAlbums.php');
+            header('Location:showhotel.php');
         }
     
     ?>

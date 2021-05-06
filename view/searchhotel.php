@@ -44,11 +44,11 @@
 	?>
 		<section class="container">
 			<h2>MUSIC</h2>
-			<a href = "showAlbums.php" class="btn btn-primary shop-item-button">All albums</a>
+			<a href = "showhotel.php" class="btn btn-primary shop-item-button">All hotel</a>
 			<div class="shop-items">
 				
 				<div class="shop-item">
-					<strong class="shop-item-title"> <?= $result['titre'] ?> </strong>
+					<strong class="shop-item-title"> <?= $result['name'] ?> </strong>
 					<img src="../images/<?= $result['image'] ?>" class="shop-item-image">
 					<div class="shop-item-details">
 						<span class="shop-item-price"><?= $result['prix'] ?> dt.</span>
