@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 29, 2021 at 10:19 AM
+-- Generation Time: Apr 30, 2021 at 11:27 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `projet`
+-- Database: `site`
 --
 
 -- --------------------------------------------------------
@@ -77,6 +77,60 @@ INSERT INTO `groups` (`id`, `nom`, `num`, `contact`, `image`, `description`) VAL
 ('60880112d6a06', 'tjje(j(\'', 72782, 'ryjr@gm.com', 'fox.jpg', 'rsh'),
 ('608a8790addcd', 'group2', 12345678, 'group2@gmail.com', 'loup.jpg', 'nous sommes le group2');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reclamation`
+--
+
+DROP TABLE IF EXISTS `reclamation`;
+CREATE TABLE IF NOT EXISTS `reclamation` (
+  `idRec` int(11) NOT NULL AUTO_INCREMENT,
+  `iduser` int(11) NOT NULL,
+  `sujet` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  PRIMARY KEY (`idRec`),
+  KEY `fk_iduser` (`iduser`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reclamation`
+--
+
+INSERT INTO `reclamation` (`idRec`, `iduser`, `sujet`, `message`, `file`) VALUES
+(2, 3, '        bonjour ', '    bye byee', ''),
+(4, 3, '        bonjour ', '    qqqqqqq', ''),
+(5, 3, '        a', '    qqqqqqq', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `idUser` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `occupation` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`idUser`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`idUser`, `email`, `name`, `lastname`, `occupation`, `gender`, `password`) VALUES
+(3, 'dragonballz-mohamed@live.fr', 'hama', 'aaaa', 'user', 'F', 'qqqqq'),
+(4, 'madoss14@yahoo.com', 'med', 'm\'hiri', 'client', 'M', 'qqqqq'),
+(5, 'bruhmoment@gmail.com', 'awa', 'wwwww', 'admin', 'M', 'qqqqq');
+
 --
 -- Constraints for dumped tables
 --
@@ -86,6 +140,12 @@ INSERT INTO `groups` (`id`, `nom`, `num`, `contact`, `image`, `description`) VAL
 --
 ALTER TABLE `evenements`
   ADD CONSTRAINT `evenements_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id`);
+
+--
+-- Constraints for table `reclamation`
+--
+ALTER TABLE `reclamation`
+  ADD CONSTRAINT `fk_iduser` FOREIGN KEY (`iduser`) REFERENCES `user` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -58,6 +58,7 @@
                     'contact' => $group->getContact(),
                     'image' => $group->getImage(),
                     'description' => $group->getDescription(),
+               
 
                 ]);
             } catch (PDOException $e) {

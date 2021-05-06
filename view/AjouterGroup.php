@@ -1,7 +1,9 @@
 <?php
     require_once '../controller/GroupC.php';
     require_once '../model/group.php';
-
+session_start();
+include_once '../assets/compte.php';
+include_once '../controller/compteU.php';
     $GroupC =  new GroupC();
 
     if (isset($_POST['nom']) && isset($_POST['num']) && isset($_POST['contact']) && isset($_POST['image']) && isset($_POST['description']) ) {
@@ -31,6 +33,9 @@
         <a href = "AfficherGroup.php" class="btn btn-primary shop-item-button">tous les groups</a>
 		<div class="form-container">
             <form action="" method = "POST">
+
+              
+
                 <div class="row">
                     <div class="col-25">                
                         <label>Nom: </label>

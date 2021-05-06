@@ -29,6 +29,21 @@
             }
         }
 
+public function getEvenementById_Group($id) {
+            try {
+                $pdo = getConnexion();
+                $query = $pdo->prepare(
+                    'SELECT id_group FROM evenements WHERE id = :id'
+                );
+                $query->execute([
+                    'id' => $id
+                ]);
+                return $query->fetch();
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+        }
+
         public function getEvenementByNom($nom) {
             try {
                 $pdo = getConnexion();

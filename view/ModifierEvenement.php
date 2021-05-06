@@ -41,7 +41,7 @@
 
 <?php  $pdo = getConnexion();
                 $query = $pdo->prepare(
-                    'SELECT id, nom FROM groups '
+                    'SELECT id, nom FROM groups'
                 );
 $query->execute();
 $data = $query->fetchAll();
