@@ -472,8 +472,13 @@ if( isset($_POST['id']) && isset($_POST['nom']) && isset($_POST['capacite']) && 
                         <div class="card-header">
                             <strong class="card-title">Liste des refuges</strong>
                             <div style="float : right;">
-                                <button type="button" onclick="sortTableUp()" class="btn btn-outline-primary"> <i class="fa  fa-level-up"></i></button></a>
-                                <button type="button" onclick="sortTableDown()" class="btn btn-outline-primary"> <i class="fa  fa-level-down"></i></button></a>
+                            <a class="Export" href="pdfR.php">Pdf</a>
+                            <button type="button" onclick="sortTableUp()" class="btn btn-outline-primary"> <i class="fa  fa-level-up"></i></button></a>
+                            <button type="button" onclick="sortTableDown()" class="btn btn-outline-primary"> <i class="fa  fa-level-down"></i></button></a>
+   
+
+
+
                             </div>
                             <br>
                             <div class="input-group" style="margin-top: 1.5%;">
@@ -658,7 +663,8 @@ if( isset($_POST['id']) && isset($_POST['nom']) && isset($_POST['capacite']) && 
                 }
             }
         }
-
+        
+       
     </script>
 </div>
 </body>
