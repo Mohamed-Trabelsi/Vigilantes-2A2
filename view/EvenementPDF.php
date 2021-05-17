@@ -10,7 +10,7 @@
         $pdf->setTextColor(0, 0, 0);
 
         $pdf->SetFont('Arial','B',11);
-        $pdf->Image('../assets/img/logo1.png',13,13,13,13,'png');
+        $pdf->Image('../assets/img/logo.png',13,13,13,13,'png');
         $pdf->Cell(20,10,"Date:",0,0,'C');
         $pdf->Cell(5,10,date("j-n-Y"),0,1,'C');
         // table column

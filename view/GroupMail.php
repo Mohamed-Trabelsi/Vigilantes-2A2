@@ -1,6 +1,6 @@
 <?php
    require_once '../controller/EvenementC.php';
-    require_once '../model/evenement.php';
+    require_once '../models/evenement.php';
 
 
 
@@ -53,7 +53,7 @@ $mail->Subject = 'Evenement Annule';
 $f= implode($result);
 
 $mysql = mysqli_connect('localhost', 'root', '');
-mysqli_select_db($mysql, 'site');
+mysqli_select_db($mysql, 'site_1_1');
 
 
 $e = mysqli_query($mysql, "SELECT nom,id_group FROM evenements");

@@ -25,22 +25,22 @@ if(empty($_SESSION['e']))
 
 
 ?>
-<!DOCTYPE html>
-<link rel="stylesheet" href="../assets/css/style.css">
-
-<html lang="fr">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
+    <meta charset="utf-8">
    
     <title>ADMIN || DASHBOARD </title>
-    
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+<link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
    
+<link  rel="stylesheet" href="../models/css/bootstrap.min.css"/>
+ <link  rel="stylesheet" href="../models/css/bootstrap-theme.min.css"/>    
+ <link rel="stylesheet" href="../models/css/main.css">
+ <link  rel="stylesheet" href="../models/css/font.css">
+ <script src="../models/js/jquery.js" type="text/javascript"></script>
 
+  <script src="../models/js/bootstrap.min.js"  type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
@@ -55,7 +55,6 @@ if(empty($_SESSION['e']))
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-
 
    <style>
     #weatherWidget .currentDesc {
@@ -119,41 +118,12 @@ if(empty($_SESSION['e']))
     <script src="../assets/js/init/fullcalendar-init.js"></script>
 
 </head>
-<?php include_once 'header.php'; ?>
+
 <body>
-	<!--
-
-	 <?php include_once 'header.php'; ?>
-	<a href = "searchAlbum.php" class="btn btn-primary shop-item-button">Rechercher</a>
-		<section class="container">
-			<h2>Groups volontaires</h2>
-			<a href = "addAlbum.php" class="btn btn-primary shop-item-button" href = "#">Ajouter</a>
-			<div class="shop-items">
-				<?php
-					foreach ($groups as $group) {
-				?>
-				<div class="shop-item">
-					<strong class="shop-item-title"> <?= $group['nom'] ?> </strong>
-					<img src="../images/<?= $group['image'] ?>" width = "200" height = "200" class="shop-item-image">
-					<div class="shop-item-details">
-						<span class="shop-item-price"><?= $group['num'] ?>  </span>
-						<a type="button" class="btn btn-primary shop-item-button" href = "updateAlbum.php?idGroup=<?= $group['id'] ?>">Modifier</a>
-						<a type="button" class="btn btn-primary shop-item-button" href = "showAlbums.php?idGroup=<?= $group['id'] ?>">Supprimer</a>
-					</div>
-				</div>
-				<?php 
-					}
-				?>
-			</div>
-		</section>
-<?php include_once 'footer.php'; ?>
--->
-
-
 <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
-            	
+                
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="profiladmin.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
@@ -170,26 +140,27 @@ if(empty($_SESSION['e']))
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>users</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>users</a>
                         <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="affichreclamation.php">les reclamations</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="affichage.php">les comptes</a></li>
                         
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>farah</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Adoption</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="animaux.php">Gérer Animaux</a></li>
+                        <li  class="active"><i class="menu-icon fa fa-th"></i><a href="refuges.php">Gérer Refuges</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="statistic.php">Statistiques</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-title">Icons</li><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>oussama</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Engagements Sociaux</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="AjouterGroup.php">Groups Volontaires</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="AfficherGroup.php">Groups Volontaires</a></li>
                             <li><i class="menu-icon ti-themify-logo"></i><a href="AfficherEvenement.php">Evenements</a></li>
                         </ul>
                     </li>
@@ -213,7 +184,7 @@ if(empty($_SESSION['e']))
                     <li class="menu-title">log out</li><!-- /.menu-title -->
                  
                         
-                          	
+                            
 <li><a href="deconnexion.php"> <i class="menu-icon fa fa-sign-in"></i>Déconnecter </a></li>
                         
                     </li>
@@ -221,7 +192,6 @@ if(empty($_SESSION['e']))
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside>
-     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
         <!-- Header-->
         <header id="header" class="header">
@@ -236,7 +206,7 @@ if(empty($_SESSION['e']))
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
-                    	 <?php
+                         <?php
 // Il est bien connecté
 echo 'Bienvenue admin ', $_SESSION['b'];
 ?>
@@ -385,7 +355,7 @@ echo 'Bienvenue admin ', $_SESSION['b'];
                 arrow = '&nbsp;<span class="glyphicon glyphicon-arrow-up"></span>';  
            }  
            $.ajax({  
-                url:"sort.php",  
+                url:"sortgroup.php",  
                 method:"POST",  
                 data:{column_name:column_name, order:order},  
                 success:function(data)  
@@ -412,7 +382,7 @@ echo 'Bienvenue admin ', $_SESSION['b'];
 						
 						
 
-echo '<tr><td>'.$c++.'</td><td>'.$group['id'].'</td><td>'.$group['nom'].'</td><td>'.$group['num'].'</td><td>'.$group['contact'].'</td><td> '.$group['description'].'</td><td> '?><?= $group['image'] ?> <img src="../images/<?= $group['image'] ?>" height ="width" >	<?php echo '</td>'?><?php echo '<td>' ?>  
+echo '<tr><td>'.$c++.'</td><td>'.$group['id'].'</td><td>'.$group['nom'].'</td><td>'.$group['num'].'</td><td>'.$group['contact'].'</td><td> '.$group['description'].'</td><td> '?><?= $group['image'] ?> <img src="../photo/<?= $group['image'] ?>" height ="width" >	<?php echo '</td>'?><?php echo '<td>' ?>  
 					
 						<a type="button" class="btn btn-primary shop-item-button" href = "AfficherGroup.php?id=<?= $group['id'] ?>">Supprimer</a></div><?php echo '</td></tr>' ?> 
                        
