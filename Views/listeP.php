@@ -18,13 +18,22 @@
 <head>
 	<title>Liste des Produits</title>
 	 <?php include_once 'header.php'; ?>
+	 <div id="fb-root"></div>
+<div id="fb-root"></div>
+
 </head>
+
+
 <body>
 	<?php include_once 'nav-bar.php'; ?>
 		<div id="right-panel" class="right-panel">
       <div class="content">
 		<section class="container">
 			<h2>Liste des Produits</h2>
+			<br><br>
+			<a href="pdf.php">pdf</a>
+			<br><br>
+			<a href="excel.php">excel</a>
 			<br><br>
 			<div class="shop-items">
 				<?php

@@ -1,6 +1,6 @@
 <?php
     require_once '../Controller/pack.php';
-    require_once '../entities/pack.php';
+    require_once '../Models/pack.php';
 
     $packG =  new gererPack();
   

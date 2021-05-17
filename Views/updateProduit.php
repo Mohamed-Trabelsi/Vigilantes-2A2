@@ -1,8 +1,8 @@
 <?php
     require_once '../Controller/categorie.php';
-    require_once '../entities/categorie.php';
+    require_once '../Models/categorie.php';
     require_once '../Controller/produit.php';
-    require_once '../entities/produit.php';
+    require_once '../Models/produit.php';
     
     $gererCategorie =  new gererCategorie();
     $categories = $gererCategorie -> afficherCategorie();

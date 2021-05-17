@@ -1,10 +1,10 @@
 <?php
     require_once '../Controller/produit.php';
     require_once '../Controller/pack.php';
-    require_once '../entities/pack.php';
-    $produitG =  new gererProduit();
+    require_once '../Models/pack.php';
+     $produitG =  new gererProduit();
 
-	$produits = $produitG->afficherProduit();
+	   $produits = $produitG->afficherProduit();
 
  $gererPack = new gererPack();
 

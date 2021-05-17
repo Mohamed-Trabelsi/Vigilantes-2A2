@@ -10,7 +10,7 @@ class produit
 	private $imgProduit;
 	private $dateAProduit;
 	private $qte;
-	//private $noteProduit;
+	
 	public function __construct($nomProduit,$categ,$descrProduit,$prixProduit,$imgProduit,$dateAProduit,$qte)
 	
 	{
@@ -21,7 +21,7 @@ class produit
 		$this->imgProduit=$imgProduit;
 		$this->dateAProduit=$dateAProduit;
 		$this->qte=$qte;
-		//$this->noteProduit=$noteProduit;
+		
 		
 		
 		
@@ -35,7 +35,7 @@ class produit
 	public function getimgProduit(){return $this->imgProduit;}
 	public function getdateAProduit(){return $this->dateAProduit;}
 	public function getQte(){return $this->qte;}
-	//public function getnoteProduit(){return $this->noteProduit;}
+	
 
 	public function setnomProduit($nomProduit){$this->nomProduit=$nomProduit;}
 	public function setCateg($categ){$this->categ=$categ;}
@@ -44,7 +44,7 @@ class produit
 	public function setimgProduit($imgProduit){$this->imgProduit=$imgProduit;}
 	public function setdateAProduit($dateAProduit){$this->dateAProduit=$dateAProduit;}
 	public function setQte($qte){$this->qte=$qte;}
-	//public function setnoteProduit($noteProduit){$this->noteProduit=$noteProduit;}
+	
 	
 }
 

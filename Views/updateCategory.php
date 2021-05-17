@@ -1,6 +1,6 @@
 <?php
     require_once '../Controller/categorie.php';
-    require_once '../entities/categorie.php';
+    require_once '../Models/categorie.php';
 
     $categorieG =  new gererCategorie();
   
@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
 	<?php include_once 'header.php'; ?>
 </head>
 
