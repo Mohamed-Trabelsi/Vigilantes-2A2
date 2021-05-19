@@ -134,11 +134,11 @@
             }
         }
 
-        public function deleteHotel($id) {
+        public function deleteReservation($id) {
             try {
                 $pdo = getConnexion();
                 $query = $pdo->prepare(
-                    'DELETE FROM hotels WHERE id = :id'
+                    'DELETE FROM reservations WHERE num = :id'
                 );
                 $query->execute([
                     'id' => $id

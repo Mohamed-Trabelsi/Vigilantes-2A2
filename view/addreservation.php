@@ -1,26 +1,56 @@
+
 <?php
     require_once '../controller/reservationR.php';
     require_once '../assets/reservation.php';
     require_once '../controller/hotelC.php';
 session_start();
+  $test =5 ;
+
     $reservationR =  new reservationR();
     $hotelC =  new hotelC();
      if (isset($_GET['id'])) {
             $result = $hotelC->getAlbumById($_GET['id']);}
 
     if (isset($_POST['date']) && isset($_POST['check_in']) && isset($_POST['check_out'])) {
+           $test= 1;
             $calc_days = abs(strtotime( $_POST['check_out']) - strtotime($_POST['check_in'])) ; 
             $calc_days =floor($calc_days / (60*60*24)  );
-            $p= $result['prix'] *  $calc_days ;
-        echo $p ;
-        echo  $calc_days ;
-        $reservation = new reservation($_POST['date'], $_POST['check_in'], $_POST['check_out'], $p,$_GET['id'], $_SESSION['a']);
+          $p= $result['prix'] *  $calc_days ;
+          $check_in = $_POST['check_in'];
+          $check_out= $_POST['check_out'];
+           $date= $_POST['date'];}
+
+            
+if (isset($_POST['test3']) && isset($_POST['date1'])  ) {
+   
+  
+    $reservation = new reservation($_POST['date1'], $_POST['check_in1'], $_POST['check_out1'], $_POST['paiement1'],$_GET['id'], $_SESSION['a']);
+
        
         $reservationR->addReservation($reservation);
+        header('Location:showhotel.php');
+       ?> <?php
+}
 
-       // header('Location:showhotel.php');
-    }
-?>
+
+            ?>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+
+     
+   
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +62,14 @@ session_start();
 </head>
 
 <body>
-	
-    <a href = "searchhotel.php" class="btn btn-primary shop-item-button">Search</a>
+	<?php if ($test != 1 ) { ?>
+       
+    
+    
     
 	<section class="container">
 		<h2>New resrevation</h2>
-        <a href = "showhotel.php" class="btn btn-primary shop-item-button">All hotel</a>
+       
 		<div class="form-container">
             <form action="" method = "POST">
                 <div class="row">
@@ -57,17 +89,9 @@ session_start();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-25">
-                        <label>paiement: <?= $p?></label>
-                    </div>
-                    
-                    <div class="col-25">
-                        <label>clients: <?=$_SESSION['b'] ?></label>
-                    </div>
                    
-                    <div class="col-25">
-                        <label name= "hotel">hotel: <?= $_GET['id']?></label>
-                    </div>
+                    
+                    
                    
                     <div class="col-25">
                         <label>check_out</label>
@@ -83,7 +107,77 @@ session_start();
             </form>
 		</div>
 	</section>
-	
+	<?php 
+} 
+     ?>
+
+
+
+
+
+
+
+     <?php if ($test == 1 ) { ?>
+       
+    
+   
+    
+    <section class="container">
+        <h2>New resrevation</h2>
+       
+        <div class="form-container">
+            <div class="form-container">
+                <form action="" method = "POST">
+               <div class="row">
+                    <div class="col-25">                
+                        <label>date: </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name = "date1" value="<?=$date?>" readonly required autofocus>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>check_in</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name = "check_in1" value="<?=$check_in?>" readonly required autofocus>
+                    </div>
+                </div>
+                 <div class="col-25">
+                        <label>check_out</label>
+                    </div>
+                    <div class="col-75">
+                        <input type = "date" name = "check_out1" value="<?=$check_out?>" readonly required autofocus>
+                    </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>paiement: </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="real" name = "paiement1" value="<?= $p?>" readonly required autofocus>
+                    </div>
+                    <div class="col-25">
+                        <label>clients: <?=$_SESSION['b'] ?></label>
+                    </div>
+                   
+                    <div class="col-25">
+                        <label name= "hotel">hotel: <?= $result['name']?></label>
+                    </div>
+                   
+                   
+                </div>
+                <br>
+                <div class="row">
+                    <input type="submit" value="Submit" name = "test3">
+                </div>
+            </form>
+        </div>
+    </section>
+    <?php 
+} 
+     ?>
 </body>
 
 </html>
+ 
