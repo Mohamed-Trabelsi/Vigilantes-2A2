@@ -67,7 +67,8 @@ if(empty($_SESSION['e']))
                 <li class="nav-item"><a href="listehotel.php" class="nav-link">logement</a></li>
                 <li class="nav-item"><a href="listeAnimaux.php" class="nav-link">Adoption</a></li>
                 <li class="nav-item"><a href="EngagementsSociaux.php" class="nav-link">Engagements Sociaux</a></li>
-             
+             <li class="nav-item"><a href="afficompte.php" class="nav-link">Votre Compte</a></li>
+                
              
             </ul>
         </div>

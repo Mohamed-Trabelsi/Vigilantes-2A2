@@ -97,7 +97,7 @@ if(empty($_SESSION['e']))
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
                         
-                        <div class="img align-self-stretch" style="background-image: url(images/<?php echo $hotel['image']; ?>)"></div>
+                        <div class="img align-self-stretch" style="background-image: url(../photo/<?php echo $hotel['image']; ?>)"></div>
                     </div>
                     <div class="text pt-3 px-3 pb-4 text-center">
                        

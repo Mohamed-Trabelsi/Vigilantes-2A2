@@ -115,7 +115,7 @@ if(empty($_SESSION['e']))
             <div class="col-md-6 col-lg-4 ftco-animate fadeInUp ftco-animated">
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(../assets/img/<?php echo $produit['imageP']; ?>)"></div>
+                        <div class="img align-self-stretch" style="background-image: url(../photo/<?php echo $produit['imageP']; ?>)"></div>
                     </div>
                     <div class="text pt-3 px-3 pb-4 text-center">
                         <h3><?php echo $produit['nomP']; ?></h3>
@@ -152,7 +152,7 @@ if(empty($_SESSION['e']))
             <div class="col-md-6 col-lg-4 ftco-animate fadeInUp ftco-animated">
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(../assets/img/<?php echo $pack['img']; ?>)"></div>
+                        <div class="img align-self-stretch" style="background-image: url(../photo/<?php echo $pack['img']; ?>)"></div>
                     </div>
                     <div class="text pt-3 px-3 pb-4 text-center">
                         <h3><?php echo $pack['nompk']; ?></h3>

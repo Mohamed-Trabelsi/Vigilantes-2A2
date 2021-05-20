@@ -121,7 +121,7 @@
                                     </td>
                                      <td class="avatar">
                                         <div class="round-img">
-                                            <a  ><img class="rounded-circle" src="images/<?php echo $hotel['image']; ?> " alt=""></a>
+                                            <a  ><img class="rounded-circle" src="../photo/<?php echo $hotel['image']; ?> " alt=""></a>
                                         </div>
                                     </td>
 

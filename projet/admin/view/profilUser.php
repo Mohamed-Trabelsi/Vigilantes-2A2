@@ -106,8 +106,8 @@ if(empty($_SESSION['e']))
               </div>
               <div class="media-body">
                 <h3 class="heading">
-Garderie pour animaux </h3>
-                <a class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+pet hotel </h3>
+                <a href="listehotel.php" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>    
           </div>
@@ -254,11 +254,7 @@ Garderie pour animaux </h3>
                               <div class="card-body py-3 px-0">
                                 <ol>
                                    Pour dresser son chien et lui faire comprendre qu'il doit se coucher sur ordre, agenouillez-vous à sa droite et placez votre main gauche sur ses épaules. Placez ensuite votre main droite juste derrière ses pattes avant. Dites « couché » en appuyant doucement sur ses épaules.
-                                </ol>
-                              </div>
-                            </div>
-                          </div>
-
+    
                           <div class="card">
                             <div class="card-header p-0" id="headingTwo" role="tab">
                               <h2 class="mb-0">
@@ -309,8 +305,8 @@ Garderie pour animaux </h3>
                     <div class="d-flex align-items-center">
                         <div class="user-img" style="background-image: url(images/person_4.jpg)"></div>
                         <div class="pl-3">
-                            <p class="name">Roger Scott</p>
-                            <span class="position">Marketing Manager</span>
+                            <p class="name">Ahmed Ali</p>
+                            <span class="position">étudient</span>
                           </div>
                       </div>
                   </div>
@@ -324,7 +320,7 @@ Garderie pour animaux </h3>
                     <div class="d-flex align-items-center">
                         <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
                         <div class="pl-3">
-                            <p class="name">Roger Scott</p>
+                            <p class="name">Ali Benmoussa</p>
                             <span class="position">Marketing Manager</span>
                           </div>
                       </div>
@@ -335,12 +331,12 @@ Garderie pour animaux </h3>
                 <div class="testimony-wrap py-4">
                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">j'ai beaucoup aimé vos services.</p>
                     <div class="d-flex align-items-center">
                         <div class="user-img" style="background-image: url(images/staff-6.jpg)"></div>
                         <div class="pl-3">
-                            <p class="name">Roger Scott</p>
-                            <span class="position">Marketing Manager</span>
+                            <p class="name">Loujayn Badri</p>
+                            <span class="position">ingénieur</span>
                           </div>
                       </div>
                   </div>

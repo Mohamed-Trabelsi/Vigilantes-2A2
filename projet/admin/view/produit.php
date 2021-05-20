@@ -219,7 +219,7 @@ $categories = $gererCategorie -> afficherCategorie();
                                     <td class="serial"><?php echo $produit['idP']; ?></td>
                                      <td class="avatar">
                                         <div class="round-img">
-                                            <a href="" ><img class="rounded-circle" src="../assets/img/<?php echo $produit['imageP']; ?> " alt=""></a>
+                                            <a href="" ><img class="rounded-circle" src="../photo/<?php echo $produit['imageP']; ?> " alt=""></a>
                                         </div>
                                     </td>
                                     <td> <?php echo $produit['nomP'];  ?> </td>

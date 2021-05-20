@@ -184,7 +184,7 @@
                                     </div>
                                     <hr>
                                      
-                                    <form action="pack.php" method="post"  id="theForm"   >
+                                    <form action="" method="post"  id="theForm"   >
                                         <input hidden type="text"  required class="form-control" name="id" id="id" value="-1" style="display: none;" >
                                         <div class="row">
                                             <div class="col-md-6">
@@ -273,7 +273,7 @@
                                     <td class="serial"><?php echo $produit['idP']; ?></td>
                                      <td class="avatar">
                                         <div class="round-img">
-                                            <a href="" ><img class="rounded-circle" src="../assets/img/<?php echo $produit['imageP']; ?> " alt=""></a>
+                                            <a href="" ><img class="rounded-circle" src="../photo/<?php echo $produit['imageP']; ?> " alt=""></a>
                                         </div>
                                     </td>
                                     <td> <?php echo $produit['nomP'];  ?> </td>

@@ -109,7 +109,7 @@ session_start();
                                     <td class="serial"><?php echo $pack['idPk']; ?></td>
                                      <td class="avatar">
                                         <div class="round-img">
-                                            <a href="" ><img class="rounded-circle" src="../assets/img/<?php echo $pack['img']; ?> " alt=""></a>
+                                            <a href="" ><img class="rounded-circle" src="../photo/<?php echo $pack['img']; ?> " alt=""></a>
                                         </div>
                                     </td>
                                     <td> <?php echo $pack['nompk'];  ?> </td>
